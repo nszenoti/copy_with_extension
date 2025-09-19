@@ -16,3 +16,9 @@ For insight into how this package works, see [my blog post](https://alexander-ki
 ## copy_with_extension_gen
 * Package: [copy_with_extension_gen](https://pub.dev/packages/copy_with_extension_gen)
 * [Source code](https://github.com/numen31337/copy_with_extension/tree/master/copy_with_extension_gen)
+
+---
+
+## Enhancement
+
+- add new flag `allowNullForNonNullableFields` to `@CopyWith()` so as to allow passing `null` to non-nullable arguments in copywith call

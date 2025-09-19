@@ -30,7 +30,7 @@ environment:
 dependencies:
   ...
   copy_with_extension: ^9.0.0
-  
+
 dev_dependencies:
   ...
   build_runner: ^2.6.0
@@ -157,3 +157,10 @@ The generated `*.g.dart` file creates an extension on your class that exposes a 
 Each parameter of the proxy's `call` method is typed as `Object?` and defaults to a special constant `$CopyWithPlaceholder`. This sentinel value lets the proxy distinguish between a parameter that was **not** supplied and one that was set to `null`. Fields whose parameter equals `$CopyWithPlaceholder` retain their current value, while any other argument replaces the field value. This approach enables safe nullification of nullable fields without affecting non-nullable ones.
 
 When `copyWithNull` is enabled, an additional `copyWithNull` method is generated to nullify fields by passing boolean flags. The proxy class used by `copyWith` internally invokes the appropriate constructor with the updated field values after resolving these placeholders.
+
+
+---
+
+## Enhancement
+
+- add new flag `allowNullForNonNullableFields` to `@CopyWith()` so as to allow passing `null` to non-nullable arguments in copywith call
